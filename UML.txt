@@ -1,39 +1,30 @@
----
-
-### 5. Diagrama UML (Representação Textual)
-
-```text
 +---------------------------------------------------+
 |                       Aluno                       |
 +---------------------------------------------------+
-| - _matricula: str                                 |
-| - _nome: str                                      |
-| - _curso: str                                     |
-| - _notas: list                                    |
+| + matricula: str                                  |
+| + nome: str                                       |
+| + curso: str                                      |
+| + notas: list                                     |
 +---------------------------------------------------+
-| + __init__(matricula: str, nome: str, curso: str) |
-| + matricula() [property]                          |
-| + nome() [property]                               |
-| + curso() [property]                              |
-| + notas() [property]                              |
-| + adicionar_nota(nota: float): None               |
-| + calcular_media(): float                         |
-| + determinar_situacao(): str                      |
-| + obter_boletim(): str                            |
+| + __init__(matricula, nome, curso)                |
+| + adicionar_nota(nota)                            |
+| + calcular_media()                                |
+| + determinar_situacao()                           |
+| + exibir_boletim()                                |
 +---------------------------------------------------+
                          ^
-                         | 1 (Composição / Associação)
+                         | 1 (Associação / Composição)
                          |
 +---------------------------------------------------+
 |                 SistemaAcademico                  |
 +---------------------------------------------------+
-| - _alunos: dict                                   |
+| + alunos: dict                                    |
 +---------------------------------------------------+
 | + __init__()                                      |
-| + cadastrar_aluno(matricula, nome, curso): Aluno  |
-| + buscar_aluno(matricula): Aluno                  |
-| + listar_alunos(): None                           |
-| + registrar_nota(matricula, nota): None           |
-| + consultar_boletim(matricula): None              |
-| + emitir_relatorio_geral(): None                  |
+| + cadastrar_aluno(matricula, nome, curso)         |
+| + buscar_aluno(matricula)                         |
+| + listar_alunos()                                 |
+| + registrar_nota(matricula, nota)                 |
+| + consultar_boletim(matricula)                    |
+| + emitir_relatorio_geral()                        |
 +---------------------------------------------------+
