@@ -1,0 +1,39 @@
+---
+
+### 5. Diagrama UML (Representação Textual)
+
+```text
++---------------------------------------------------+
+|                       Aluno                       |
++---------------------------------------------------+
+| - _matricula: str                                 |
+| - _nome: str                                      |
+| - _curso: str                                     |
+| - _notas: list                                    |
++---------------------------------------------------+
+| + __init__(matricula: str, nome: str, curso: str) |
+| + matricula() [property]                          |
+| + nome() [property]                               |
+| + curso() [property]                              |
+| + notas() [property]                              |
+| + adicionar_nota(nota: float): None               |
+| + calcular_media(): float                         |
+| + determinar_situacao(): str                      |
+| + obter_boletim(): str                            |
++---------------------------------------------------+
+                         ^
+                         | 1 (Composição / Associação)
+                         |
++---------------------------------------------------+
+|                 SistemaAcademico                  |
++---------------------------------------------------+
+| - _alunos: dict                                   |
++---------------------------------------------------+
+| + __init__()                                      |
+| + cadastrar_aluno(matricula, nome, curso): Aluno  |
+| + buscar_aluno(matricula): Aluno                  |
+| + listar_alunos(): None                           |
+| + registrar_nota(matricula, nota): None           |
+| + consultar_boletim(matricula): None              |
+| + emitir_relatorio_geral(): None                  |
++---------------------------------------------------+
